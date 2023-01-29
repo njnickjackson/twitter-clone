@@ -1,0 +1,20 @@
+html, body {
+    box-sizing: border-box;
+}
+
+.flex-wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.cool-title {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: x-large;
+}
+
+.nav-title-and-photo {
+    display: flex;
+    align-items: center;
+}

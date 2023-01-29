@@ -1,0 +1,13 @@
+.sign-up-input {
+    display: flex;
+    justify-content: space-between;
+    width: 28%;
+}
+
+.sign-up-btn {
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em 1.5em;
+    background-color: rgb(104, 181, 204);
+    font-weight: bold;
+}
