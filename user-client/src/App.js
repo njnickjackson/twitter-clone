@@ -5,10 +5,12 @@ import SignUp from './components/SignUp';
 import TweetList from './components/TweetList';
 import Header from './components/Header';
 import { UserProvider } from './contexts/UserProvider';
+import { TweetProvider } from './contexts/TweetProvider';
 
 function App() {
   return (
     <UserProvider>
+      <TweetProvider>
       <div>
           <BrowserRouter>
               <Routes>
@@ -21,6 +23,7 @@ function App() {
               </Routes>
           </BrowserRouter>
       </div>
+      </TweetProvider>
     </UserProvider>
   );
 }
