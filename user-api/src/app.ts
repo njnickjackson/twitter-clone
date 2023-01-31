@@ -1,5 +1,6 @@
 import express, { NextFunction, Request, Response } from 'express'
 import morgan from 'morgan';
+import tweetRoutes from './routes/tweetRoutes';
 import userRoutes from './routes/userRoutes';
 import mongoose from 'mongoose';
 
@@ -20,6 +21,7 @@ const cors = require('cors');
 app.use(cors());
 
 // routes
+app.use('/api/tweets', tweetRoutes);
 app.use('/api/users', userRoutes);
 
 app.use((req: Request, res: Response, next: NextFunction) => {
