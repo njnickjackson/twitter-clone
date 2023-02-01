@@ -70,3 +70,8 @@ export const getUser: RequestHandler = async (req, res, next) => {
         res.status(401).send();
     }
 }
+
+export const getAllUsers: RequestHandler = async (req, res, next) => {
+    let userList = await User.find();
+    res.status(200).json(userList);
+}
