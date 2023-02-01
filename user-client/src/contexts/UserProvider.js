@@ -6,8 +6,9 @@ export const UserProvider = (props) => {
 
     const baseUrl = "http://localhost:3000/api/users/";
 
-    let [isSignedIn, setIsSignedIn] = useState(localStorage.getItem("myUserToken"))
-    let [user, setUser] = useState("")
+    let [isSignedIn, setIsSignedIn] = useState("");
+    let [user, setUser] = useState("");
+    let [allUsers, setAllUsers] = useState([])
 
     useEffect(() => {
         async function fetchData(id) {
@@ -17,6 +18,13 @@ export const UserProvider = (props) => {
             fetchData(parseJwt(isSignedIn).userId)
         };
     }, [isSignedIn]);
+
+    useEffect(() => {
+        async function fetchUsers() {
+            await getAllUsers();
+        }
+        fetchUsers()
+    }, []);
 
     function parseJwt (token) {
         var base64Url = token.split('.')[1];
@@ -39,10 +47,10 @@ export const UserProvider = (props) => {
 
     function signInUser(username, password) {
         let user = { username, password };
-    
         return axios.post(`${baseUrl}/login`, user)
             .then(response => {
                 localStorage.setItem('myUserToken', response.data.token)
+                setIsSignedIn(localStorage.getItem("myUserToken"))
                 return new Promise(resolve => resolve(response.data));
             }
         );
@@ -58,6 +66,10 @@ export const UserProvider = (props) => {
         
     }
 
+    function getAllUsers() {
+        return axios.get(baseUrl).then(response => setAllUsers(response.data));
+    }
+
     return (
         <UserContext.Provider value={{
             createUser,
@@ -65,7 +77,8 @@ export const UserProvider = (props) => {
             getUser,
             isSignedIn,
             setIsSignedIn,
-            user
+            user,
+            allUsers
         }}>
             { props.children }
         </UserContext.Provider>

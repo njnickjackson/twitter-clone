@@ -14,7 +14,6 @@ const SignIn = () => {
         event.preventDefault();
         signInUser(username, password).then(() => {
             navigate('/tweets');
-            window.location.reload();
         }).catch(error => {
             console.log(error);
             window.alert('Failed login');
