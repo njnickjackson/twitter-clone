@@ -3,6 +3,7 @@ import mongoose, { Document, Schema } from 'mongoose';
 interface ITweet extends Document {
     text: string;
     username: string;
+    userId: string;
     date: string;
 }
 
@@ -12,6 +13,10 @@ const tweetSchema: Schema = new Schema({
         required: true,
     },
     username: {
+        type: String,
+        required: true
+    },
+    userId: {
         type: String,
         required: true
     },

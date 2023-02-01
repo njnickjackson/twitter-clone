@@ -25,6 +25,7 @@ export const addTweet: RequestHandler = async (req, res, next) => {
     const newTweet: ITweet = new Tweet({
         text: req.body.text,
         username: req.body.username,
+        userId: req.body.userId,
         date: req.body.date
     });
 
@@ -49,6 +50,7 @@ export const editTweet: RequestHandler = async (req, res, next) => {
         _id: itemId,
         text: req.body.text,
         username: req.body.username,
+        userId: req.body.userId,
         date: req.body.date
     });
 
