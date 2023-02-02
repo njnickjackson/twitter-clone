@@ -7,6 +7,7 @@ import Header from './components/Header';
 import { UserProvider } from './contexts/UserProvider';
 import { TweetProvider } from './contexts/TweetProvider';
 import EditTweet from './components/EditTweet';
+import Profile from './components/Profile';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
                     <Route path="signin" element={ <SignIn /> } />
                     <Route path="signup" element={ <SignUp /> } />
                     <Route path="edit/:id" element={ <EditTweet /> } />
+                    <Route path="profile/:id" element={ <Profile /> } />
                   </Route>
               </Routes>
           </BrowserRouter>

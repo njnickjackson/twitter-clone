@@ -22,6 +22,9 @@ const EditTweet = () => {
         setCurrentTweet((prevValue) => {
             return { ...prevValue, [event.target.name]: event.target.value }
         });
+        setCurrentTweet((prevValue) => {
+            return { ...prevValue, date: (new Date()).toLocaleString() }
+        });
     }
 
     function handleSubmit(event) {
