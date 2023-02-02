@@ -6,7 +6,7 @@ import Home from './components/Home';
 import Header from './components/Header';
 import { UserProvider } from './contexts/UserProvider';
 import { TweetProvider } from './contexts/TweetProvider';
-import Profile from './components/Profile';
+import EditTweet from './components/EditTweet';
 
 function App() {
   return (
@@ -15,12 +15,11 @@ function App() {
       <div>
           <BrowserRouter>
               <Routes>
-                  <Route path="/" element={ <Header /> } >
+                  <Route exact path="/" element={ <Header /> } >
                     <Route index element={<Home />} />
                     <Route path="signin" element={ <SignIn /> } />
                     <Route path="signup" element={ <SignUp /> } />
-                    <Route path="tweets" element={ <Home /> } />
-                    <Route path="profile/:id" element={ <Profile /> } />
+                    <Route path="edit/:id" element={ <EditTweet /> } />
                   </Route>
               </Routes>
           </BrowserRouter>

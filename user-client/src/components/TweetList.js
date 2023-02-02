@@ -29,7 +29,7 @@ const TweetList = () => {
                                             <br />
                                             {isSignedIn && 
                                                 <div className='edit-and-delete'>
-                                                    <Link className='tweet-link-edit' to={'/'}>Edit</Link>
+                                                    <Link className='tweet-link-edit' to={`edit/${tweet._id}`}>Edit</Link>
                                                     <button className='tweet-link-delete' onClick={handleDeleteTweet.bind(this, tweet._id)}>Delete</button>
                                                 </div>
                                             }

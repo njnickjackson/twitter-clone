@@ -28,7 +28,7 @@ const TweetPost = () => {
     function handleSubmit(event) {
         event.preventDefault();
         addTweet(newTweet).then(() => {
-            navigate('/tweets');
+            navigate('/');
         }).catch(error => {
             console.log(error);
             navigate('/signin');

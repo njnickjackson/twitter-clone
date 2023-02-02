@@ -21,9 +21,9 @@ function Header() {
                 <Navbar.Text className="ms-3 cool-title">Tweeter</Navbar.Text>
             </Nav>
             <Nav>
-              {isSignedIn ? <Link to="tweets" className="nav-link">Welcome, {user.username}!</Link> :  <Link to="signup" className="nav-link">Sign Up</Link>}
+              {isSignedIn ? <Link to="/" className="nav-link">Welcome, {user.username}!</Link> :  <Link to="signup" className="nav-link">Sign Up</Link>}
               {isSignedIn ? <Link to="signin" onClick={handleLogout} className="nav-link">Logout</Link> :  <Link to="signin" className="nav-link">Sign In</Link>}
-              <Link to="tweets" className="nav-link">All Tweets</Link>
+              <Link to="/" className="nav-link">All Tweets</Link>
             </Nav>
           </Container>
         </Navbar>
