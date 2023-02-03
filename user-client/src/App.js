@@ -23,6 +23,7 @@ function App() {
                     <Route path="edit/:id" element={ <EditTweet /> } />
                     <Route path="profile/:id" element={ <Profile /> } />
                   </Route>
+                  <Route path="*" element={<h1>Page Not Found</h1>} />
               </Routes>
           </BrowserRouter>
       </div>

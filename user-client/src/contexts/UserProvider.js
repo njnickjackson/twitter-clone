@@ -8,7 +8,7 @@ export const UserProvider = (props) => {
 
     let [isSignedIn, setIsSignedIn] = useState("");
     let [user, setUser] = useState("");
-    let [allUsers, setAllUsers] = useState([])
+    let [allUsers, setAllUsers] = useState([]);
 
     useEffect(() => {
         async function fetchData(id) {
@@ -26,6 +26,7 @@ export const UserProvider = (props) => {
         fetchUsers()
     }, []);
 
+    // Takes the JWT token from local storage and returns the user's id.  Referenced from the JWT package in npm
     function parseJwt (token) {
         var base64Url = token.split('.')[1];
         var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
