@@ -15,7 +15,6 @@ const Profile = () => {
         setClickedUser(allUsers.filter(user => user._id === params.id)[0])
     }, [allUsers, params.id])
 
-    console.log(clickedUser)
     function handleDeleteTweet(id) {
         deleteTweet(id)
         navigate('/')

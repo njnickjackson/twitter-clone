@@ -17,14 +17,11 @@ export const UserProvider = (props) => {
         if (isSignedIn) {
             fetchData(parseJwt(isSignedIn).userId)
         };
-    }, [isSignedIn]);
-
-    useEffect(() => {
         async function fetchUsers() {
             await getAllUsers();
         }
         fetchUsers()
-    }, []);
+    }, [isSignedIn]);
 
     // Takes the JWT token from local storage and returns the user's id.  Referenced from the JWT package in npm
     function parseJwt (token) {
